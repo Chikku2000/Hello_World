@@ -9,13 +9,12 @@ const mysql = Sql.createConnection({
     user : 'root',
     password : 'chirag@123',
     database : 'learningapp200'
-})
+});
+const PORT = process.env.PORT || 5000
 app.use(express.static(path.join(__dirname , 'public')));
 app.set('view engine' , 'ejs');
 app.set('view' , path.join(__dirname , 'view'));
 app.get('/' , (req , res) =>{
     res.send('My app is working');
 })
-app.listen(5000 , () =>{
-    console.log('Listening at http://localhost:3000');
-})
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
