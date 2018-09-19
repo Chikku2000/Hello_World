@@ -10,7 +10,7 @@ const mysql = Sql.createConnection({
     password : 'chirag@123',
     database : 'learningapp200'
 });
-const PORT = process.env.PORT || 5000
+const port = process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname , 'public')));
 app.set('view engine' , 'ejs');
 app.set('view' , path.join(__dirname , 'view'));
